@@ -11,7 +11,7 @@ use Nette\Http\Request;
 use Nette\Http\UrlScript;
 
 
-class MocksContainerHook extends AppContainerHook
+class HttpMocksContainerHook extends AppContainerHook
 {
 	/** @var string */
 	private $baseUrl;
