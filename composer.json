@@ -1,5 +1,5 @@
 {
-	"name": "mangoweb/mail-tester",
+	"name": "mangoweb/tester-http-mocks",
 	"type": "library",
 	"license": "MIT",
 	"require": {
