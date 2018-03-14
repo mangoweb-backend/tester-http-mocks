@@ -1,0 +1,18 @@
+{
+	"name": "mangoweb/mail-tester",
+	"type": "library",
+	"license": "MIT",
+	"require": {
+		"php": "~7.1",
+		"nette/http": "~2.4"
+	},
+	"require-dev": {
+		"phpstan/phpstan-shim": "~0.9",
+		"mangoweb/tester-infrastructure": "@dev"
+	},
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	}
+}
