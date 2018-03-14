@@ -10,11 +10,8 @@ cache:
 before_script:
     - composer self-update --no-interaction
 
-script:
-    - vendor/bin/phpstan analyse --configuration phpstan.neon --level 7 src/
-
 jobs:
     include:
-        - stage: Code Quality
+        - stage: PHPStan
           install: composer update --prefer-dist
-          script: vendor/bin/phpstan analyse --level 7 src/
+          script: vendor/bin/phpstan analyse --configuration phpstan.neon --level 7 src/
