@@ -139,7 +139,7 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function setCookieParameters($path, $domain = NULL, $secure = NULL)
+	public function setCookieParameters($path, $domain = NULL, $secure = NULL, $samesite = NULL)
 	{
 		return $this;
 	}
