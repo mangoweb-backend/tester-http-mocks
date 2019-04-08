@@ -45,4 +45,10 @@ class HttpRequest extends Request
 	{
 		return array_merge(parent::getHeaders(), $this->headers);
 	}
+
+
+	public function isSameSite(): bool
+	{
+		return TRUE;
+	}
 }
