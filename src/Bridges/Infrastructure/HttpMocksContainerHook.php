@@ -6,7 +6,7 @@ use Mangoweb\Tester\HttpMocks\HttpRequest;
 use Mangoweb\Tester\HttpMocks\Session;
 use Mangoweb\Tester\Infrastructure\Container\AppContainerHook;
 use Nette\DI\ContainerBuilder;
-use Nette\DI\Statement;
+use Nette\DI\Definitions\Statement;
 use Nette\Http\Request;
 use Nette\Http\UrlScript;
 

@@ -17,19 +17,19 @@ class SessionSection extends Nette\Http\SessionSection
 	}
 
 
-	public function getIterator()
+	public function getIterator(): \Iterator
 	{
 		return new \ArrayIterator($this->data);
 	}
 
 
-	public function __set($name, $value)
+	public function __set(string $name, $value): void
 	{
 		$this->data[$name] = $value;
 	}
 
 
-	public function &__get($name)
+	public function &__get(string $name)
 	{
 		if ($this->warnOnUndefined && !array_key_exists($name, $this->data)) {
 			trigger_error("The variable '$name' does not exist in session section", E_USER_NOTICE);
@@ -39,13 +39,13 @@ class SessionSection extends Nette\Http\SessionSection
 	}
 
 
-	public function __isset($name)
+	public function __isset(string $name): bool
 	{
 		return isset($this->data[$name]);
 	}
 
 
-	public function __unset($name)
+	public function __unset(string $name): void
 	{
 		unset($this->data[$name]);
 	}
@@ -57,12 +57,12 @@ class SessionSection extends Nette\Http\SessionSection
 	}
 
 
-	public function removeExpiration($variables = NULL)
+	public function removeExpiration($variables = NULL): void
 	{
 	}
 
 
-	public function remove()
+	public function remove(): void
 	{
 		$this->data = [];
 	}

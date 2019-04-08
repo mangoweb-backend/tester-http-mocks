@@ -20,7 +20,7 @@ class HttpRequest extends Request
 	}
 
 
-	public function getRawBody()
+	public function getRawBody(): ?string
 	{
 		return $this->body ?? parent::getRawBody();
 	}
@@ -32,7 +32,7 @@ class HttpRequest extends Request
 	}
 
 
-	public function getHeader($header, $default = NULL)
+	public function getHeader(string $header, $default = NULL): ?string
 	{
 		if (isset($this->headers[$header])) {
 			return $this->headers[$header];
@@ -41,8 +41,14 @@ class HttpRequest extends Request
 	}
 
 
-	public function getHeaders()
+	public function getHeaders(): array
 	{
 		return array_merge(parent::getHeaders(), $this->headers);
+	}
+
+
+	public function isSameSite(): bool
+	{
+		return TRUE;
 	}
 }

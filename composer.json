@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"require": {
 		"php": "~7.1",
-		"nette/http": "~2.4"
+		"nette/http": "~3.0"
 	},
 	"require-dev": {
 		"phpstan/phpstan-shim": "~0.9",
