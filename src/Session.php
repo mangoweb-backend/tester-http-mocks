@@ -26,31 +26,31 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function start()
+	public function start(): void
 	{
 		$this->started = TRUE;
 	}
 
 
-	public function isStarted()
+	public function isStarted(): bool
 	{
 		return $this->started;
 	}
 
 
-	public function close()
+	public function close(): void
 	{
 		$this->started = FALSE;
 	}
 
 
-	public function destroy()
+	public function destroy(): void
 	{
 		$this->started = FALSE;
 	}
 
 
-	public function exists()
+	public function exists(): bool
 	{
 		return $this->exists;
 	}
@@ -62,12 +62,12 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function regenerateId()
+	public function regenerateId(): void
 	{
 	}
 
 
-	public function getId()
+	public function getId(): string
 	{
 		return $this->id;
 	}
@@ -79,7 +79,7 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function getSection($section, $class = SessionSection::class)
+	public function getSection($section, $class = SessionSection::class): Nette\Http\SessionSection
 	{
 		if (isset($this->sections[$section])) {
 			return $this->sections[$section];
@@ -92,19 +92,19 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function hasSection($section)
+	public function hasSection($section): bool
 	{
 		return isset($this->sections[$section]);
 	}
 
 
-	public function getIterator()
+	public function getIterator(): \Iterator
 	{
 		return new \ArrayIterator(array_keys($this->sections));
 	}
 
 
-	public function clean()
+	public function clean(): void
 	{
 	}
 
@@ -115,7 +115,7 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function getName()
+	public function getName(): string
 	{
 		return '';
 	}
@@ -127,7 +127,7 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function getOptions()
+	public function getOptions(): array
 	{
 		return [];
 	}
@@ -145,9 +145,9 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function getCookieParameters()
+	public function getCookieParameters(): array
 	{
-		return NULL;
+		return [];
 	}
 
 
