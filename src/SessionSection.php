@@ -29,7 +29,7 @@ class SessionSection extends Nette\Http\SessionSection
 	}
 
 
-	public function &__get($name)
+	public function &__get(string $name)
 	{
 		if ($this->warnOnUndefined && !array_key_exists($name, $this->data)) {
 			trigger_error("The variable '$name' does not exist in session section", E_USER_NOTICE);
@@ -39,13 +39,13 @@ class SessionSection extends Nette\Http\SessionSection
 	}
 
 
-	public function __isset($name): bool
+	public function __isset(string $name): bool
 	{
 		return isset($this->data[$name]);
 	}
 
 
-	public function __unset($name): void
+	public function __unset(string $name): void
 	{
 		unset($this->data[$name]);
 	}

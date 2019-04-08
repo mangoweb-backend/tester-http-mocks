@@ -79,7 +79,7 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function getSection($section, $class = SessionSection::class): Nette\Http\SessionSection
+	public function getSection(string $section, $class = SessionSection::class): Nette\Http\SessionSection
 	{
 		if (isset($this->sections[$section])) {
 			return $this->sections[$section];
@@ -92,7 +92,7 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function hasSection($section): bool
+	public function hasSection(string $section): bool
 	{
 		return isset($this->sections[$section]);
 	}
@@ -109,7 +109,7 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function setName($name)
+	public function setName(string $name)
 	{
 		return $this;
 	}
@@ -133,13 +133,13 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function setExpiration($time)
+	public function setExpiration(?string $time)
 	{
 		return $this;
 	}
 
 
-	public function setCookieParameters($path, $domain = NULL, $secure = NULL, $samesite = NULL)
+	public function setCookieParameters(string $path, string $domain = NULL, bool $secure = NULL, string $samesite = NULL)
 	{
 		return $this;
 	}
@@ -151,14 +151,9 @@ class Session extends Nette\Http\Session
 	}
 
 
-	public function setSavePath($path)
+	public function setSavePath(string $path)
 	{
 		return $this;
-	}
-
-
-	public function setStorage(Nette\Http\ISessionStorage $storage)
-	{
 	}
 
 

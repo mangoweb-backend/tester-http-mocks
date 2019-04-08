@@ -20,7 +20,7 @@ class HttpRequest extends Request
 	}
 
 
-	public function getRawBody(): string
+	public function getRawBody(): ?string
 	{
 		return $this->body ?? parent::getRawBody();
 	}
