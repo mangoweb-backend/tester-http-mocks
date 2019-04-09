@@ -32,12 +32,12 @@ class HttpRequest extends Request
 	}
 
 
-	public function getHeader(string $header, $default = NULL): ?string
+	public function getHeader(string $header): ?string
 	{
 		if (isset($this->headers[$header])) {
 			return $this->headers[$header];
 		}
-		return parent::getHeader($header, $default);
+		return parent::getHeader($header);
 	}
 
 
