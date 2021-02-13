@@ -4,30 +4,31 @@ namespace Mangoweb\Tester\HttpMocks;
 
 use Nette;
 
-
 class SessionSection extends Nette\Http\SessionSection
 {
 
+	/** @var array<mixed> */
 	private $data = [];
 
-
-	public function __construct(Nette\Http\Session $session, $name)
+	public function __construct(Nette\Http\Session $session, string $name)
 	{
 		parent::__construct($session, $name);
 	}
 
-
+	/** @return \Iterator<mixed> */
 	public function getIterator(): \Iterator
 	{
 		return new \ArrayIterator($this->data);
 	}
 
-
+	/**
+	 * @param string $name
+	 * @param mixed  $value
+	 */
 	public function __set(string $name, $value): void
 	{
 		$this->data[$name] = $value;
 	}
-
 
 	public function &__get(string $name)
 	{
@@ -38,29 +39,24 @@ class SessionSection extends Nette\Http\SessionSection
 		return $this->data[$name];
 	}
 
-
 	public function __isset(string $name): bool
 	{
 		return isset($this->data[$name]);
 	}
-
 
 	public function __unset(string $name): void
 	{
 		unset($this->data[$name]);
 	}
 
-
-	public function setExpiration($time, $variables = NULL)
+	public function setExpiration($time, $variables = null)
 	{
 		return $this;
 	}
 
-
-	public function removeExpiration($variables = NULL): void
+	public function removeExpiration($variables = null): void
 	{
 	}
-
 
 	public function remove(): void
 	{

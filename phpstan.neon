@@ -1,3 +1,2 @@
 parameters:
 	ignoreErrors:
-		- '#Mangoweb\\Tester\\HttpMocks\\Session::__construct\(\) does not call parent constructor from Nette\\Http\\Session.#'

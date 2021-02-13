@@ -1,6 +1,6 @@
 Mango Tester nette/http mocks
 ======
-[![Build Status](https://travis-ci.org/mangoweb-backend/tester-http-mocks.svg?branch=master)](https://travis-ci.org/mangoweb-backend/tester-http-mocks)
+[![Actions Status](https://badgen.net/github/checks/mangoweb-backend/tester-http-mocks/master?cache=300)](https://github.com/mangoweb-backend/tester-http-mocks/actions)
 
 
 Installation
